@@ -1,0 +1,90 @@
+; ModuleID = 'LLVMDialectModule'
+source_filename = "LLVMDialectModule"
+
+define void @triton__0d1d2d3e(ptr addrspace(1) %0, ptr addrspace(1) %1, ptr addrspace(1) %2, i32 %3) local_unnamed_addr !dbg !5 {
+  %5 = tail call i32 @llvm.nvvm.read.ptx.sreg.tid.x(), !dbg !8
+  %6 = shl i32 %5, 1, !dbg !8
+  %7 = and i32 %6, 510, !dbg !8
+  %8 = tail call i32 asm "mov.u32 $0, %ctaid.x;", "=r"() #1, !dbg !9
+  %9 = shl i32 %8, 9, !dbg !10
+  %10 = or i32 %9, %7, !dbg !11
+  %11 = or i32 %10, 1, !dbg !11
+  %12 = icmp slt i32 %10, %3, !dbg !12
+  %13 = icmp slt i32 %11, %3, !dbg !12
+  %14 = sdiv i32 %10, 172, !dbg !13
+  %15 = sdiv i32 %10, 8600, !dbg !14
+  %16 = sext i32 %15 to i64, !dbg !15
+  %17 = getelementptr double, ptr addrspace(1) %0, i64 %16, !dbg !15
+  %18 = tail call i64 asm sideeffect "mov.u64 $0, 0x0;\0A\09@$2 ld.global.L1::evict_last.b64 { $0 }, [ $1 + 0 ];", "=l,l,b"(ptr addrspace(1) %17, i1 %12) #1, !dbg !16
+  %19 = tail call i64 asm sideeffect "mov.u64 $0, 0x0;\0A\09@$2 ld.global.L1::evict_last.b64 { $0 }, [ $1 + 0 ];", "=l,l,b"(ptr addrspace(1) %17, i1 %13) #1, !dbg !16
+  %20 = sext i32 %10 to i64, !dbg !17
+  %21 = getelementptr float, ptr addrspace(1) %1, i64 %20, !dbg !17
+  %22 = sext i32 %11 to i64, !dbg !17
+  %23 = getelementptr float, ptr addrspace(1) %1, i64 %22, !dbg !17
+  %24 = tail call i32 asm sideeffect "mov.u32 $0, 0x0;\0A\09@$2 ld.global.b32 { $0 }, [ $1 + 0 ];", "=r,l,b"(ptr addrspace(1) %21, i1 %12) #1, !dbg !18
+  %25 = tail call i32 asm sideeffect "mov.u32 $0, 0x0;\0A\09@$2 ld.global.b32 { $0 }, [ $1 + 0 ];", "=r,l,b"(ptr addrspace(1) %23, i1 %13) #1, !dbg !18
+  %26 = srem i32 %14, 50, !dbg !19
+  %27 = sitofp i32 %26 to double, !dbg !20
+  %28 = insertelement <2 x i64> poison, i64 %19, i64 0, !dbg !16
+  %29 = insertelement <2 x i64> %28, i64 %18, i64 1, !dbg !16
+  %30 = bitcast <2 x i64> %29 to <2 x double>, !dbg !16
+  %31 = fcmp olt <2 x double> %30, <double 5.000000e+01, double 5.000000e+01>, !dbg !21
+  %32 = fcmp uno <2 x double> %30, zeroinitializer, !dbg !25
+  %33 = or <2 x i1> %31, %32, !dbg !26
+  %34 = select <2 x i1> %33, <2 x double> %30, <2 x double> <double 5.000000e+01, double 5.000000e+01>, !dbg !27
+  %35 = insertelement <2 x double> poison, double %27, i64 0, !dbg !28
+  %36 = shufflevector <2 x double> %35, <2 x double> poison, <2 x i32> zeroinitializer, !dbg !28
+  %37 = fcmp ogt <2 x double> %34, %36, !dbg !28
+  %38 = getelementptr float, ptr addrspace(1) %2, i64 %20, !dbg !29
+  %39 = getelementptr float, ptr addrspace(1) %2, i64 %22, !dbg !29
+  %40 = extractelement <2 x i1> %37, i64 1, !dbg !30
+  %41 = select i1 %40, i32 %24, i32 0, !dbg !30
+  tail call void asm sideeffect "@$2 st.global.b32 [ $1 + 0 ], { $0 };", "r,l,b"(i32 %41, ptr addrspace(1) %38, i1 %12) #1, !dbg !30
+  %42 = extractelement <2 x i1> %37, i64 0, !dbg !30
+  %43 = select i1 %42, i32 %25, i32 0, !dbg !30
+  tail call void asm sideeffect "@$2 st.global.b32 [ $1 + 0 ], { $0 };", "r,l,b"(i32 %43, ptr addrspace(1) %39, i1 %13) #1, !dbg !30
+  ret void, !dbg !31
+}
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none)
+declare noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #0
+
+attributes #0 = { mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none) }
+attributes #1 = { nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.dbg.cu = !{!1}
+!nvvm.annotations = !{!3, !4, !4, !3}
+
+!0 = !{i32 2, !"Debug Info Version", i32 3}
+!1 = distinct !DICompileUnit(language: DW_LANG_C, file: !2, producer: "triton", isOptimized: true, runtimeVersion: 0, emissionKind: FullDebug)
+!2 = !DIFile(filename: "cfenprznzdpqnb443odi6czvwvnqbowbp5pvrlmisbuo2mhoq6dj.py", directory: "/home/admin/zy429782/fx_experiments/torch_aot_tool/dynamicLib_7622_gpu/fe")
+!3 = !{ptr @triton__0d1d2d3e, !"kernel", i32 1}
+!4 = !{ptr @triton__0d1d2d3e, !"maxntidx", i32 256}
+!5 = distinct !DISubprogram(name: "triton__0d1d2d3e", linkageName: "triton__0d1d2d3e", scope: !2, file: !2, line: 20, type: !6, scopeLine: 20, spFlags: DISPFlagDefinition | DISPFlagOptimized, unit: !1)
+!6 = !DISubroutineType(cc: DW_CC_normal, types: !7)
+!7 = !{}
+!8 = !DILocation(line: 22, column: 36, scope: !5)
+!9 = !DILocation(line: 21, column: 28, scope: !5)
+!10 = !DILocation(line: 21, column: 33, scope: !5)
+!11 = !DILocation(line: 22, column: 23, scope: !5)
+!12 = !DILocation(line: 23, column: 21, scope: !5)
+!13 = !DILocation(line: 24, column: 20, scope: !5)
+!14 = !DILocation(line: 26, column: 37, scope: !5)
+!15 = !DILocation(line: 26, column: 31, scope: !5)
+!16 = !DILocation(line: 26, column: 43, scope: !5)
+!17 = !DILocation(line: 27, column: 30, scope: !5)
+!18 = !DILocation(line: 27, column: 35, scope: !5)
+!19 = !DILocation(line: 28, column: 16, scope: !5)
+!20 = !DILocation(line: 29, column: 19, scope: !5)
+!21 = !DILocation(line: 37, column: 15, scope: !22, inlinedAt: !24)
+!22 = distinct !DILexicalBlockFile(scope: !5, file: !23, discriminator: 0)
+!23 = !DIFile(filename: "triton_helpers.py", directory: "/home/admin/zy429782/torch_folder/pytorch-2.3.1/torch/_inductor")
+!24 = !DILocation(line: 31, column: 40, scope: !22)
+!25 = !DILocation(line: 39, column: 21, scope: !22, inlinedAt: !24)
+!26 = !DILocation(line: 39, column: 16, scope: !22, inlinedAt: !24)
+!27 = !DILocation(line: 40, column: 29, scope: !22, inlinedAt: !24)
+!28 = !DILocation(line: 32, column: 18, scope: !5)
+!29 = !DILocation(line: 35, column: 25, scope: !5)
+!30 = !DILocation(line: 35, column: 36, scope: !5)
+!31 = !DILocation(line: 35, column: 4, scope: !5)

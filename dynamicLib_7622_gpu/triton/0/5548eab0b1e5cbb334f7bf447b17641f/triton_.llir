@@ -1,0 +1,88 @@
+; ModuleID = 'LLVMDialectModule'
+source_filename = "LLVMDialectModule"
+
+define void @triton__0d1d2(ptr addrspace(1) %0, ptr addrspace(1) %1, i32 %2) local_unnamed_addr !dbg !5 {
+  %4 = tail call i32 @llvm.nvvm.read.ptx.sreg.tid.x(), !dbg !8
+  %5 = shl i32 %4, 2, !dbg !8
+  %6 = and i32 %5, 508, !dbg !8
+  %7 = tail call i32 asm "mov.u32 $0, %ctaid.x;", "=r"() #1, !dbg !9
+  %8 = shl i32 %7, 9, !dbg !10
+  %9 = or i32 %8, %6, !dbg !11
+  %10 = or i32 %9, 1, !dbg !11
+  %11 = or i32 %9, 2, !dbg !11
+  %12 = or i32 %9, 3, !dbg !11
+  %13 = icmp slt i32 %9, %2, !dbg !12
+  %14 = icmp slt i32 %10, %2, !dbg !12
+  %15 = icmp slt i32 %11, %2, !dbg !12
+  %16 = icmp slt i32 %12, %2, !dbg !12
+  %.frozen = freeze i32 %9
+  %17 = sdiv i32 %.frozen, 204, !dbg !13
+  %18 = mul i32 %17, 204
+  %.decomposed = sub i32 %.frozen, %18
+  %19 = srem i32 %10, 204, !dbg !14
+  %20 = srem i32 %11, 204, !dbg !14
+  %21 = srem i32 %12, 204, !dbg !14
+  %22 = sext i32 %9 to i64, !dbg !15
+  %23 = getelementptr float, ptr addrspace(1) %0, i64 %22, !dbg !15
+  %24 = sext i32 %10 to i64, !dbg !15
+  %25 = getelementptr float, ptr addrspace(1) %0, i64 %24, !dbg !15
+  %26 = sext i32 %11 to i64, !dbg !15
+  %27 = getelementptr float, ptr addrspace(1) %0, i64 %26, !dbg !15
+  %28 = sext i32 %12 to i64, !dbg !15
+  %29 = getelementptr float, ptr addrspace(1) %0, i64 %28, !dbg !15
+  %30 = tail call i32 asm sideeffect "mov.u32 $0, 0x0;\0A\09@$2 ld.global.b32 { $0 }, [ $1 + 0 ];", "=r,l,b"(ptr addrspace(1) %23, i1 %13) #1, !dbg !16
+  %31 = tail call i32 asm sideeffect "mov.u32 $0, 0x0;\0A\09@$2 ld.global.b32 { $0 }, [ $1 + 0 ];", "=r,l,b"(ptr addrspace(1) %25, i1 %14) #1, !dbg !16
+  %32 = tail call i32 asm sideeffect "mov.u32 $0, 0x0;\0A\09@$2 ld.global.b32 { $0 }, [ $1 + 0 ];", "=r,l,b"(ptr addrspace(1) %27, i1 %15) #1, !dbg !16
+  %33 = tail call i32 asm sideeffect "mov.u32 $0, 0x0;\0A\09@$2 ld.global.b32 { $0 }, [ $1 + 0 ];", "=r,l,b"(ptr addrspace(1) %29, i1 %16) #1, !dbg !16
+  %34 = mul i32 %17, 1872, !dbg !17
+  %35 = add i32 %34, %.decomposed, !dbg !18
+  %36 = add i32 %34, %19, !dbg !18
+  %37 = add i32 %34, %20, !dbg !18
+  %38 = add i32 %34, %21, !dbg !18
+  %39 = sext i32 %35 to i64, !dbg !19
+  %40 = getelementptr float, ptr addrspace(1) %1, i64 %39, !dbg !19
+  %41 = sext i32 %36 to i64, !dbg !19
+  %42 = getelementptr float, ptr addrspace(1) %1, i64 %41, !dbg !19
+  %43 = sext i32 %37 to i64, !dbg !19
+  %44 = getelementptr float, ptr addrspace(1) %1, i64 %43, !dbg !19
+  %45 = sext i32 %38 to i64, !dbg !19
+  %46 = getelementptr float, ptr addrspace(1) %1, i64 %45, !dbg !19
+  tail call void asm sideeffect "@$2 st.global.b32 [ $1 + 0 ], { $0 };", "r,l,b"(i32 %30, ptr addrspace(1) %40, i1 %13) #1, !dbg !20
+  tail call void asm sideeffect "@$2 st.global.b32 [ $1 + 0 ], { $0 };", "r,l,b"(i32 %31, ptr addrspace(1) %42, i1 %14) #1, !dbg !20
+  tail call void asm sideeffect "@$2 st.global.b32 [ $1 + 0 ], { $0 };", "r,l,b"(i32 %32, ptr addrspace(1) %44, i1 %15) #1, !dbg !20
+  tail call void asm sideeffect "@$2 st.global.b32 [ $1 + 0 ], { $0 };", "r,l,b"(i32 %33, ptr addrspace(1) %46, i1 %16) #1, !dbg !20
+  ret void, !dbg !21
+}
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none)
+declare noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #0
+
+attributes #0 = { mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none) }
+attributes #1 = { nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.dbg.cu = !{!1}
+!nvvm.annotations = !{!3, !4, !4, !3}
+
+!0 = !{i32 2, !"Debug Info Version", i32 3}
+!1 = distinct !DICompileUnit(language: DW_LANG_C, file: !2, producer: "triton", isOptimized: true, runtimeVersion: 0, emissionKind: FullDebug)
+!2 = !DIFile(filename: "cjqzf4pkgzdrvr43psci747zbqvjpauec7a2eh52g5cssxwlnktf.py", directory: "/home/admin/zy429782/fx_experiments/torch_aot_tool/dynamicLib_7622_gpu/jq")
+!3 = !{ptr @triton__0d1d2, !"kernel", i32 1}
+!4 = !{ptr @triton__0d1d2, !"maxntidx", i32 128}
+!5 = distinct !DISubprogram(name: "triton__0d1d2", linkageName: "triton__0d1d2", scope: !2, file: !2, line: 20, type: !6, scopeLine: 20, spFlags: DISPFlagDefinition | DISPFlagOptimized, unit: !1)
+!6 = !DISubroutineType(cc: DW_CC_normal, types: !7)
+!7 = !{}
+!8 = !DILocation(line: 22, column: 36, scope: !5)
+!9 = !DILocation(line: 21, column: 28, scope: !5)
+!10 = !DILocation(line: 21, column: 33, scope: !5)
+!11 = !DILocation(line: 22, column: 23, scope: !5)
+!12 = !DILocation(line: 23, column: 21, scope: !5)
+!13 = !DILocation(line: 26, column: 20, scope: !5)
+!14 = !DILocation(line: 25, column: 18, scope: !5)
+!15 = !DILocation(line: 27, column: 30, scope: !5)
+!16 = !DILocation(line: 27, column: 35, scope: !5)
+!17 = !DILocation(line: 28, column: 36, scope: !5)
+!18 = !DILocation(line: 28, column: 31, scope: !5)
+!19 = !DILocation(line: 28, column: 25, scope: !5)
+!20 = !DILocation(line: 28, column: 48, scope: !5)
+!21 = !DILocation(line: 28, column: 4, scope: !5)
