@@ -1,0 +1,331 @@
+{
+    "system": {
+        "device": {
+            "name": "NVIDIA A10"
+        },
+        "version": {
+            "triton": "3.1.0+5fe38ffd73dc767c8fadcf23ea82d79e257c37d44077eae7f681cf967565fd43e9c017937b-835d4fc33500e1accafc5c5e00f4f73d87432c114860c04b68849bf6f942b8e5-dc767c8fadcf23ea82d79e257c37d44077eae7f681cf967565fd43e9c017937b-23d635e690d670bf61798e1259674b78c0ed5ba222ab6a455f329f27a758fc2d-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855-20b017e9c4d858ab05e783f77df50b86c6d6eee5d79f3f4b158562b4a54f8443-f44338a31e0534290b08653050804c3fabbde403a6d3004ae04f0c28495f0802-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855-a979896b9c0acfd41dd953b90bdc4b10968f7c0b45a286eae3f829aaddb2bb55-da771298f7bc45d24a61f35ef51742304421df1ab49d50bf1fc510dd5a46ea4b-b5ad56045144267528bb20a4c159a123560662713cb985b85b7c00b73116ae03-71330f394e584b0df29595d49f6ac8ac0c5503db9147090dc58ad888cebac7be-f24adfd52383f7866791ebaa5d45a5d2cc826e56ee2fd285f438e85d201fe643-a34be0d3ae4b3ac9aede195cfda42f8a0a097b2bc9642fb59673ce6b3b607f10-36130a37af1b19a0dec569aa08d30b00c74c8f02b6b632999d86dea169146792-36d42f0429aae027cb985b53b9abc616fae4dad9e0ea03953e1e9fb46d0fb9a0-e5d2cb724c08d0ef4130f3ba858d22cf21f834bfd970a5388aa6ad2a6bab91f9",
+            "cuda": "12.1"
+        },
+        "hash": "5a28f7331bedd3ce48cb9757f5835c1669a7a870933b731ddf2c28f7e2273855"
+    },
+    "cache": {
+        "base mm time: ((torch.Size([2568, 1, 50]), (50, 50, 1), torch.float32), (torch.Size([2568, 50, 16]), (800, 16, 1), torch.float32), None, None, <OpOverloadPacket(op='aten.bmm')>, None, False)": 0.025599999353289604,
+        "((torch.Size([8*s10, 1, 50]), (50, 50, 1), torch.float32), (torch.Size([8*s10, 50, 16]), (800, 16, 1), torch.float32), 'exclude_pad:True', 'exclude_pad:True', <OpOverloadPacket(op='aten.bmm')>, None, False)": false,
+        "base mm time: ((torch.Size([2568, 1, 16]), (16, 128, 1), torch.float32), (torch.Size([2568, 16, 50]), (800, 50, 1), torch.float32), None, None, <OpOverloadPacket(op='aten.bmm')>, None, False)": 0.026623999699950218,
+        "((torch.Size([8*s10, 1, 16]), (16, 128, 1), torch.float32), (torch.Size([8*s10, 16, 50]), (800, 50, 1), torch.float32), 'exclude_pad:True', 'exclude_pad:True', <OpOverloadPacket(op='aten.bmm')>, None, False)": false,
+        "mm": {
+            "[('cuda', 'torch.float32', 16050, 176, 176, 1, 0), ('cuda', 'torch.float32', 176, 176, 1, 176, 0)]": {
+                "highest": {
+                    "mm-cqrjyn5jqdhj5q3lohxxeq3fxnpvy6qsigzdm2ykqas7fpkl7zrz": 0.09830400347709656,
+                    "triton_mm-cqjvy3nazagvzh5zcj53ekgrcgvsludlftyudxurpi3eotyrmtbj": 0.35942399501800537,
+                    "triton_mm-ce2txjkc3krbhs7ddgpny53dbdxsrt26ehbldep24vissw4wkt6g": 0.4935680031776428,
+                    "triton_mm-cizbir2ztr6ey6gorlbdsor3xtblbgf7aeeknhxfn4yulwov52ae": 0.38102400302886963,
+                    "triton_mm-clzqri6u53tpn2ajnv57wd2jzwqogmlmtrzvrgapchp2pcqegmqy": 0.37785598635673523,
+                    "triton_mm-czftp634wy56h7vk5c4ft7xdhxlkulmggkqkws22cpgodgjoe2nu": Infinity,
+                    "triton_mm-c4dvg6wvnboxkjuzknjtzjqpv5gnr6jb4xhdurb5duzk7cinhmge": 0.19148799777030945,
+                    "triton_mm-c2zudhl5vpyhyihp2qncaw3rjxomiiaanrq4oczomow7h6v66e25": 0.20265600085258484,
+                    "triton_mm-cdpxwddkzg2fke4byrxhe7i7qevna5nw3vjf7ona6mykzyook22y": 0.3840000033378601,
+                    "triton_mm-cueyoexvsoqc2zno65gggg3m6xfax354mxq6zuxzmpj62gugh7kw": Infinity,
+                    "triton_mm-cvxtaqhyj2azsv5x22akgx2kovie7gf5qrkxd2s5lmzbibsqoft3": 0.7249919772148132,
+                    "triton_mm-cppulyin6zjdz7hjs26c2dof33zwtkpz7ffu4gnh3jja5sot2o7x": 0.2734079957008362,
+                    "triton_mm-cv2kz7h5hblgm6r7v445z7em664slmtryaqbbyl7e4quf2khjvbz": 1.6291840076446533,
+                    "triton_mm-cdrmjmp5ttjihss5x5upplzg4azxw4yare4erfqw2er7ogynlsz2": Infinity,
+                    "triton_mm-c5sy7nmxdjdyhzcxtjye2yjhrovutj6iog36d3hgfjy7oxp4ridq": 0.7014080286026001,
+                    "triton_mm-c55dqiy5yycuy76raq4to3dg74op6qcwfhdoeheau4acd43k2dvs": 0.23449599742889404,
+                    "triton_mm-codzs64pvc55cfgf26jwyss64pgpym5xcch4bd3xsuqxe6mi5csk": 0.6114559769630432,
+                    "triton_mm-cwk3cvl47zmutrvhz5lhbhfmrab6o237i3326h23ob5ahtbsowfg": 1.7254400253295898,
+                    "triton_mm-cpadicmcpvmd5pgteu4oggslovmotg5ti6gwxrlow6btom62mkra": Infinity,
+                    "triton_mm-crrbrbmtxjcp6fcthqv5u37xkmitppb42odsf47er6gpcljg7432": Infinity
+                }
+            },
+            "[('cuda', 'torch.float32', 16050, 172, 172, 1, 0), ('cuda', 'torch.float32', 172, 172, 1, 172, 0)]": {
+                "highest": {
+                    "mm-cqrjyn5jqdhj5q3lohxxeq3fxnpvy6qsigzdm2ykqas7fpkl7zrz": 0.10239999741315842,
+                    "triton_mm-c5fbzyckwcj5mlxvmwpkd2mfddpnzq4mck2vu4vxtqi4kbm4qcq7": 0.3665919899940491,
+                    "triton_mm-ca4mfqkoetud64ahd2gy4msslwbi2nxg4g6y6b6ioxqdk7ucxhd3": 0.49561598896980286,
+                    "triton_mm-cm2sti5soez5l6tccfvooghkje6qhgqgohgubv3wn25tgy5avzr3": 0.3839679956436157,
+                    "triton_mm-cbgd2leccml3z3qnosghzmsunma6noi2jp2qzap5acrma7wpuhgi": 0.37990400195121765,
+                    "triton_mm-copcoi3ikv45rjziqgxuws2azs7nznd5wesrnphyvb5giw3ofglm": Infinity,
+                    "triton_mm-cs7t7vd4oqf4uihvoalccuw7kyiiqepauu3g45xv5aksaapn4zzh": 0.1955839991569519,
+                    "triton_mm-ctd23v72sy374ge6yrsypconjignvcdaqnmje3e65mqutiz3k4ay": 0.20479999482631683,
+                    "triton_mm-c22dck6nzouvxxc466he4zmmjud7kqpwpoqk2libtm4z6ezghbdo": 0.39321601390838623,
+                    "triton_mm-c5cabl32jfnhfhzyupzahd3i7yf7twpaw64qeqyfkkmfkfoyen2c": Infinity,
+                    "triton_mm-chalxc5hlpehmskj2h5rvuwswtbeibnyzcxgmga76llaboqkull5": 0.7331839799880981,
+                    "triton_mm-cqnn2cc2rqfggx3ppgicnm3p33bpddumzdmazfuzfowzgmtu4f45": 0.2826240062713623,
+                    "triton_mm-ccbsfxzseliarnukcnx6tkoz7624vjygcuxjaaed3iosuf36u3a2": 1.6353280544281006,
+                    "triton_mm-cpgpe5lywd4dzzdcye52zc5zvffmci3jwr2jkk545yhl7v4wzztu": Infinity,
+                    "triton_mm-cppolgsw7hlvkajjhu3ldc3rzfir2wganqxtgl75qq2iiunsm44m": 0.7045120000839233,
+                    "triton_mm-cf2nuym3gzfqakykry5tr7o4rtu5lndcjzvvfgjcow6g5mghzz4p": 0.24166400730609894,
+                    "triton_mm-czt7en6pgatwbsvxnefmtsu6bnf4lf2fs3ek6ebq76rnfnv2ft5h": 0.6123520135879517,
+                    "triton_mm-chcrzjnibbmabuc3ncakbthfemhqqv6bk5fvyrcmfwyk3swihzxc": 1.726464033126831,
+                    "triton_mm-cdtid3rxymy5wnveniswoa342wxvc6s6tqzqephu3ad2ufvzmil4": Infinity,
+                    "triton_mm-ce22u5siimlhlar3nbksgjjixd2774jg562fej43fynjziudg4vr": Infinity
+                }
+            },
+            "[('cuda', 'torch.float32', 321, 1872, 1872, 1, 0), ('cuda', 'torch.float32', 1872, 512, 1, 1872, 0)]": {
+                "highest": {
+                    "mm-cqrjyn5jqdhj5q3lohxxeq3fxnpvy6qsigzdm2ykqas7fpkl7zrz": 0.07449600100517273,
+                    "triton_mm-ccftfqirv2f6oitlke3ehd3oxzpwqewy3qbsvkjf32olm4ipllbv": 0.27852800488471985,
+                    "triton_mm-cvgmkh2mzgjqryvlnzeajlix2vyrijcvhuzved2fq6pfnvifsr2b": 0.26419198513031006,
+                    "triton_mm-cdgbdscnlhc43hqlhhckqlfngd5fdarlkoovykwshg2qwqubsrhi": 0.34303998947143555,
+                    "triton_mm-cipr2dtopluhsmcsrobzsaidysk22r7b5f6odivukoeyssl72esr": 0.34406399726867676,
+                    "triton_mm-co4v5dns6wyw75ffedod5nt7day46pfpizzy5rmhuranwekbkzyz": Infinity,
+                    "triton_mm-cwk35o2gg5qorun6ritf4dksiw6in6me3devtjmfuuv6uyezutt2": 0.26521599292755127,
+                    "triton_mm-cuuddh57jnuj5wh2gdl5qavxaz6t4aoz4d6fvalxlwwpfxqs7bdj": 0.23449599742889404,
+                    "triton_mm-ctytd6dgay5shgwvcpyaixngwqucqw3zdczzpftgjnbhi4cwkssy": 0.3266560137271881,
+                    "triton_mm-clfvpxm45tm4g4mqxyeitnv6nugxb445wf5b4jgt6z5bs656kdn7": Infinity,
+                    "triton_mm-ckpqipdnyx23hs6rylctzs33ds45cj7apwtob2d4liocixiwnu2v": 0.7331839799880981,
+                    "triton_mm-cbmfijz3wtopwigbhuwjkv4dwl3li7qruzytkhtca5dmaf32jmxy": 0.3532800078392029,
+                    "triton_mm-c2ikud5epnttxcubobkebhbtxfghf3ha7p7gm2sqptley2wcibyg": 1.6240639686584473,
+                    "triton_mm-c5uise5x2ryzmyvvxy2mc3h4kdr7ajwenix7px2v5x4lynwbymsj": Infinity,
+                    "triton_mm-cvdrz5kb22a7kb2rk7v7jiq4gyobvzboqz5dkdebsp3jo4ci366r": 0.7096319794654846,
+                    "triton_mm-csdqv7lgxns6l7wssisg25ukdp2tjsc4zmi7oabvdyfouy3aatl3": 0.35123199224472046,
+                    "triton_mm-cibdca2qsqfpu4ejfdkz233xj4v6qgyrijck66grn5pu4agfz7hz": 0.6152960062026978,
+                    "triton_mm-cpz3wco26hjaajkrxlvuakf7soflcumantvcxszi6tedvaplr2oe": 1.7408000230789185,
+                    "triton_mm-cebzxaltni2ck6jquritwntwabptnyddt6loivxz3ye7acadnaw2": Infinity,
+                    "triton_mm-ce6nwcshrmft66s57nu6s33vivqxdzdhgabh4z4kmohkqwcde67n": Infinity
+                }
+            },
+            "[('cuda', 'torch.float32', 321, 512, 512, 1, 0), ('cuda', 'torch.float32', 512, 256, 1, 512, 0)]": {
+                "highest": {
+                    "mm-cqrjyn5jqdhj5q3lohxxeq3fxnpvy6qsigzdm2ykqas7fpkl7zrz": 0.02457600086927414,
+                    "triton_mm-cyjgtbdpwb2kqysfl73kcbuifcxxfh5rtlt7zmgj25mgc5o3dts5": 0.05734400078654289,
+                    "triton_mm-chmygikrzhubcx5regwbjy4jpab73balg2gztljpo5xsrot5ipey": 0.20803199708461761,
+                    "triton_mm-c6rosssxoqseo2q5qkctqnwvpgz6cjumz7ni4m6b5ugkqhaqvw7i": 0.05222399905323982,
+                    "triton_mm-c3z63pr255qd2lculbzcesf6admhyd2ynpyeie4lbkobnmjzwgff": 0.05222399905323982,
+                    "triton_mm-crwzazpt24stvsu7dniaxwrjbw3pnt6wlpoxkvbwmsafwwuyxj6l": Infinity,
+                    "triton_mm-cq5f56ue4dzfrtewvxkgsn26oy56n433c5ta7hh242wbuqtguhmo": 0.07577600330114365,
+                    "triton_mm-cxn7wtqpbtd6ox6gcgk5zef6xnj5mg5krwbsdzzrvgs2z7q3x4kz": 0.131071999669075,
+                    "triton_mm-crexvan5vpl75xmqd6kwwri7dub6cxfwjuy45vspy2gjb3eshror": 0.22323200106620789,
+                    "triton_mm-c2ik76zsrbbauhznfxlalyvpbnduqijcshtm6sqbb2zh4ehif2sg": Infinity,
+                    "triton_mm-c3q6jlam2cynjwc6o2hhb5w4x4aqfg2f6kcqhfby34ex2xnrgapl": 0.7024639844894409,
+                    "triton_mm-cjvvgqhn7hbdaeea5kusbszneupga7242zv7rrhsej4p4xgi72fu": 0.18227200210094452,
+                    "triton_mm-cv6dsthsxzntcw5n7rrppdc7fq2vp7r5xnlvwugotjch6oqinmek": 1.6087039709091187,
+                    "triton_mm-ctxig6qnyhb4o6pse5kxm7q4ztizqo2tnuq26igf3jhqkgq3rtj6": Infinity,
+                    "triton_mm-ch6boyfhcbqb7rbg7hix3dtfmm2cjpprx34ofay43cvu46xcwqqm": 0.711679995059967,
+                    "triton_mm-cyvisacc3wbpdnwyl2col4i7vyjjmm457fd7ded7hdc6t5hcw42y": 0.18636800348758698,
+                    "triton_mm-c6ez3r64d63gruk6ddtsccz3qfuujlhorymdcz5f7kftrtawfdc4": 0.5980160236358643,
+                    "triton_mm-c7v3b2rxc2iedz5eojn2hz375cekx3bnju2oxbgzpcf3zx5ut3cs": 1.726464033126831,
+                    "triton_mm-c6wnthpjoayzgcdggvmj4yrn337fcxe2tk6i6tswdae2tz4mrc5m": Infinity,
+                    "triton_mm-c42nvy5ceco2ijzrffmduq4h65lgrx4cnfn7b2n4eycwcnqqa2ee": Infinity
+                }
+            },
+            "[('cuda', 'torch.float32', 321, 568, 568, 1, 0), ('cuda', 'torch.float32', 568, 256, 1, 568, 0)]": {
+                "highest": {
+                    "mm-cqrjyn5jqdhj5q3lohxxeq3fxnpvy6qsigzdm2ykqas7fpkl7zrz": 0.025599999353289604,
+                    "triton_mm-cqp2ltakqt2scjldynjox4krz2tivp4xwsxxhht6qkddhw7yfqho": 0.06656000018119812,
+                    "triton_mm-chw7glno6de7lonpw7klysuxy6t2vvk2pyi3plqizq6fypgizzve": 0.20070399343967438,
+                    "triton_mm-cgyopitbdvrcswi6d4mg2vy5ug4tidkkuve7x3e22wrip64amqom": 0.058368001133203506,
+                    "triton_mm-capikc5i7w3slbrsacv6qsw6yk5peeuznsqp5hjayoxidi6dxcfl": 0.058368001133203506,
+                    "triton_mm-cv526sd5u5jjzxo7mz6vdifv3unu2dqy5gg6zc2jphk35x5ac66m": Infinity,
+                    "triton_mm-c2g5ql3xd6olrhosw22xg45cdvd4333nuk5bebsatq2darxe7oq2": 0.08499199897050858,
+                    "triton_mm-clfcmwm44rpiip5ulycj6opeegwjonwx7dqt2yy32xkjaua6s5y7": 0.12992000579833984,
+                    "triton_mm-cl2kozexsnlev6h4wq3h5dg54habc2gsdvy2aqsgxd4pt3k5k47k": 0.2170879989862442,
+                    "triton_mm-cd3dvr6dwa6bh5qg6glcfy3nlflgh7jx3yhhjieozeqg6y6hj6xn": Infinity,
+                    "triton_mm-cffdjdyimyccnae2jzktrhxqlwlexetl45kdlamlmotpmh4rag6u": 0.7271680235862732,
+                    "triton_mm-c3gfcdlhepctq3kppx6akxk42pctc5vmmkz2py7yd7kln3y3xy6i": 0.1802240014076233,
+                    "triton_mm-cih2xqnu7l6cjrpfkrsryajxxemgk4n4zgv747aji3evsn2fal4g": 1.6147840023040771,
+                    "triton_mm-cgjcstulnmuzxl5l3tcyy2gr2pxoc57ulpgtl67234j3mttm5ogo": Infinity,
+                    "triton_mm-cynojlgucaqkake6spb574egqbx2cgiv6rehn3rdzssm3kckvmqc": 0.7045120000839233,
+                    "triton_mm-clrt6b2zzamqygwg4vxzou4ktkhm6jvusollpip7suzekyaimth4": 0.18534399569034576,
+                    "triton_mm-cq6ohdrpr34lk6rnzksftgxlwrvuckejh7k6mrw2s4zyy5pkecx2": 0.609279990196228,
+                    "triton_mm-c3nbynky5gnenhl56gioc77uj2lzjm36tppwmn2foq36u6ocwf72": 1.7346559762954712,
+                    "triton_mm-cdpnslbjopyrtbw5cbbljr6smuns7xo7lrgjfpztjgy2h3lvyiui": Infinity,
+                    "triton_mm-cbr2layarghsz5qvuxhhiqjpc3opcorej2viwhkvev25jmpy4xy2": Infinity
+                }
+            },
+            "[('cuda', 'torch.float32', 321, 256, 256, 1, 0), ('cuda', 'torch.float32', 256, 128, 1, 256, 0)]": {
+                "highest": {
+                    "mm-cqrjyn5jqdhj5q3lohxxeq3fxnpvy6qsigzdm2ykqas7fpkl7zrz": 0.013311999849975109,
+                    "triton_mm-cov5p7xorqgvvpdbfcwzpgq3l43rt6l7si2evjwor7pzo6wm2p25": 0.02659199945628643,
+                    "triton_mm-ccbgtmfdikm3nkoiqbaavincu47wifimipigkgw24kgoo7yst72g": 0.18534399569034576,
+                    "triton_mm-cuktre5f67iftcl4hyp3szxb7fgsmekruc52nztaf6lcrv5nczna": 0.028672000393271446,
+                    "triton_mm-cmavwgrew42laqxecgd54hf7zq6qkybmbo4yvgjsbk6b6o5nj33x": 0.028672000393271446,
+                    "triton_mm-cw7p7pwkgzxbcrq44gyzp2t7qojgjulg4bzfog3x6eimr2ouibzu": Infinity,
+                    "triton_mm-cls62mlyycqcblt5lztlvb2to232kvsgphgcm7g3dyidqzxrn7wq": 0.040863998234272,
+                    "triton_mm-cawx6jupiwhulo72v7jxfmnorcitqygmqmyo3psnoxbfwozllsjw": 0.12800000607967377,
+                    "triton_mm-cb7oxlrbcnrl5fv4u7db7hb7stbs43mvuwyudacf6pwvhdljushv": 0.21910400688648224,
+                    "triton_mm-cvloge6pmhkm6mz67zhhqdnj6wdy4odsknibudcushagvdve2hnr": Infinity,
+                    "triton_mm-cy7vgujzffk4thq75buw7ofx2zulqogvokijh3dfanv3hmm5jj3p": 0.7024639844894409,
+                    "triton_mm-cpj5xnvxzmsap457rhwtoqacjzcwm75np7wbqfekie5uzawatz33": 0.18227200210094452,
+                    "triton_mm-cgd7h75yrauzhuaknm4ctouhyeo5kabaf4n5oryhyvr5qwdadzk4": 1.6076799631118774,
+                    "triton_mm-chnghz6654ssdqfuxdlwfbhz2f3zbkac4owubp7fba35hmfqw4b7": Infinity,
+                    "triton_mm-c4ehn3ey6ucfyyyq2wfwoyvqp5oz4guzqp7xwd4y6pbiffpvm2xh": 0.7116159796714783,
+                    "triton_mm-c3zhe4ckfeandu3vhsj4yc3bjskdll4u56ed7dt4tgqau7kxphlj": 0.18636800348758698,
+                    "triton_mm-caenccmjhscu6hdsdlx56zcakwfnxxhsbdagx5tj32wftk4iolqk": 0.6000639796257019,
+                    "triton_mm-cw6l44fe6wq64pitkcyah6mgbby5e242b7pzcuz5nm3e2l7mmgem": 1.7285120487213135,
+                    "triton_mm-cfjrwk3berknk4as2izyzlzatgzo4fpkmtdubr56ys5s2qy6er7l": Infinity,
+                    "triton_mm-cbt2i5jxah77hrzlhrj7cuzqwqw2bpxxoc23iosp4uu7jwdt5ajh": Infinity
+                }
+            },
+            "[('cuda', 'torch.float32', 16050, 176, 176, 1, 0), ('cuda', 'torch.float32', 176, 128, 1, 176, 0)]": {
+                "highest": {
+                    "mm-cqrjyn5jqdhj5q3lohxxeq3fxnpvy6qsigzdm2ykqas7fpkl7zrz": 0.06963200122117996,
+                    "triton_mm-c2ezfrsiafhfbhetujjodz4ptvf3j5wtsgtmulsg7dr3fdp7lzfl": 0.24166400730609894,
+                    "triton_mm-cwapmxhbfqxbtt7p6svu4d7olffzf3vdw67qaub6n4aqn7mrojiq": 0.3317759931087494,
+                    "triton_mm-c6hqunjmyzfmyehvh56xalfxwd4cj77cszg5ftpianrvkuqy2gau": 0.2539519965648651,
+                    "triton_mm-ckqdvekkmv3l7cliiuhwlvgwqtcmjh23a5uksl2ksajjrhogmxlv": 0.2539519965648651,
+                    "triton_mm-cube5gmlxevsks2ib64pmvli3d4hwd3wnohgscud3rhc2j3ur6gn": Infinity,
+                    "triton_mm-c7vs2wdagrxbitzahbef2njfencm5wh42i3j4b4kephqx6mny5yu": 0.12694400548934937,
+                    "triton_mm-c4mcctez7uyxu7qd3zdkomockotqvnklthdkb3jmncgn2w2w3e7d": 0.13312000036239624,
+                    "triton_mm-cnrktx7afqgucir3ys2oysqgwonkw6cahhoab3s5tzq3yaw5bixz": 0.24883200228214264,
+                    "triton_mm-cnt5zb4zaxur6ohqzggrttmkg7kbs5maeclat4fdb4zwn2dwobgb": Infinity,
+                    "triton_mm-cn6amvdtm3fwbdlceg4rc4gq52ospan6czz5xp6l7d2dx67rwklc": 0.7229440212249756,
+                    "triton_mm-cgjv7wvrhcyxd6zkwh32a5ayakmgr2nn7dklpjh7zcxw4jmeblm2": 0.17919999361038208,
+                    "triton_mm-c2zimtqvhmxkreboui4ziekzyjabdyca47zgzwkyahnzz7civycz": 1.610751986503601,
+                    "triton_mm-ckqemdrm4i3dyh2wmnv5bnpcndfwbf2ncq5ofrklzzwofilm3opt": Infinity,
+                    "triton_mm-c2ek3mjsw7bsmq7lh2zzm2darcnayominb2i2vgrg6255nktziqf": 0.7013120055198669,
+                    "triton_mm-c5b3khwljot2rujgte2zqc4clufl3h3riu5kxt4rzvxy2bhzb2iz": 0.17919999361038208,
+                    "triton_mm-cd4k62kiqe52rfqkqgw3spjlowxhy4dda5if2i6ne35eecy6p6ca": 0.6041600108146667,
+                    "triton_mm-cmpqnfidkggwphh25gbkl563ymha2qvorix4iutngy2i6sswc3zd": 1.7182719707489014,
+                    "triton_mm-cp6yaf3i67lbjrd7bam7etrkukxm444lsmevk7qwlhu52lm57ysf": Infinity,
+                    "triton_mm-cnf266gx2gksqrlha6qa6cgm4yyr2qta4nengs4bmbq5h5wanijo": Infinity
+                }
+            },
+            "[('cuda', 'torch.float32', 16050, 172, 172, 1, 0), ('cuda', 'torch.float32', 172, 128, 1, 172, 0)]": {
+                "highest": {
+                    "mm-cqrjyn5jqdhj5q3lohxxeq3fxnpvy6qsigzdm2ykqas7fpkl7zrz": 0.0727040022611618,
+                    "triton_mm-cob4g5b5we7nq2smagigr547xmcvcz2w62n32xfonn42qaqh2tdr": 0.2467840015888214,
+                    "triton_mm-cxlgc7uzu6r5i2nj3g7velbqrpslehoatofd4mtyok2pqu7zisaa": 0.3338240087032318,
+                    "triton_mm-cq3w6h7nvpkr7x2iy32zyiepzdr3wutdnhml2zwaxa7k2uf24ryp": 0.25804799795150757,
+                    "triton_mm-c5nfcnbamlmnqky3ekxi62pgleojyu2dgampzpknwqfwf4kaxmml": 0.25600001215934753,
+                    "triton_mm-c4ysw4bpmfxzmvsdm7uvvbzhs6cboyxpaxg7c5j5iohkq5tuob5z": Infinity,
+                    "triton_mm-cj4clv3g7zhesrpkzto2til2bf6aljptgp5fs4cbn7mwdon2gkkl": 0.130048006772995,
+                    "triton_mm-cewe3t4avqg3m3nyxb7haafqbfl2pd6z2yzkwnqx6a373qydh7ue": 0.13619199395179749,
+                    "triton_mm-ciahwbjvgizx53cqaxss7aufatfohfevoqvimmloypjrmzeoohzj": 0.25804799795150757,
+                    "triton_mm-cit2pt6r6s7az3paofyil7iz4kczfckmawqhzhxgztpyxxow7u3f": Infinity,
+                    "triton_mm-csa5y5ef52m2onb4tyjubdwog5ebhmjsys6h3gvxvrvo36tbnosf": 0.7311360239982605,
+                    "triton_mm-c6hy4j7rc5oqjwa46tgge64sxiiw5zdugecxczoh4pf5l5fwfvvu": 0.18025599420070648,
+                    "triton_mm-cb5jftkxic4puenada6ceqjlzy6rmd622abwzimprurztlloi4uf": 1.6178239583969116,
+                    "triton_mm-cgiciiq7go4l4t3turs5g6uwfjze6n6yuyfbjoiejo7dwpd3tahz": Infinity,
+                    "triton_mm-cakkdk4ll5vmfzgvz775uizq22m7vwzt2l3d7htcmykgtnsda3od": 0.7043200135231018,
+                    "triton_mm-ckcdxrndrf3oz5xd4tmipzk57l2ehzgadxxuaaviha5sjtcvalld": 0.18534399569034576,
+                    "triton_mm-cqbnbk4npebykh5qfpktspvwg76ezpppkcupr4wue6wo47e3fxds": 0.6092479825019836,
+                    "triton_mm-ctticaikthmhg3f2anaeaqrqfxcjwmybek2fw5olaeh5df347vp2": 1.7233920097351074,
+                    "triton_mm-copwy7v2uqqf3hhtgenubjzhvksehszuthh7hnyw2xiay4hkebpd": Infinity,
+                    "triton_mm-c7yqconk3ciqnaqk3ccp255fei57hprj3g64ypzmyzfuxu4ecdlc": Infinity
+                }
+            }
+        },
+        "addmm": {
+            "[('cuda', 'torch.float32', 321, 128, 0, 1, 0), ('cuda', 'torch.float32', 321, 156, 156, 1, 0), ('cuda', 'torch.float32', 156, 128, 1, 156, 0)]": {
+                "highest": {
+                    "addmm-alpha=1-beta=1-c4xxd3iocu4yt6z4udrlqnumays7q6mfnfd3qprh4fxgsvyhqdkf": 0.014336000196635723,
+                    "triton_mm-ca2iyxbprzhjzrfcblo2uj2uuxaojlvmgrp5ik4quapx3qeiu3zf": 0.018432000651955605,
+                    "triton_mm-cy77xmy5iscukejqi5pvkle5poy7feocagcwbptmoi3pmm7vxvek": 0.21299199759960175,
+                    "triton_mm-cda6sznpspw3s2topc5gy5p27sc3cjpckbpvgxnbpi77davui7ue": 0.020479999482631683,
+                    "triton_mm-cbwgxla6chym4jkkwxell5tme6xhtxqkssakhxcjyk25jhm5qpit": 0.020479999482631683,
+                    "triton_mm-c2e6ry4rv4ktujc43z3tv6vb3tqkg7quduu5ei6bbiqgxviol6jn": Infinity,
+                    "triton_mm-czpq7gi7kzczrzz7q66x274bmlhdovndvcd5bbffbuoveorrc3kj": 0.027648000046610832,
+                    "triton_mm-canqjmbvdlit4bopr5v7474i2rqepc5vhcsr33utrboxo4c7juh5": 0.16383999586105347,
+                    "triton_mm-ckzpy33pt37bjhabyjigxeg5tx7cyi3bejd5zt2l6emsctq6dzfr": 0.2385919988155365,
+                    "triton_mm-cciecs5e3escscoezqpu3zqn5xwzrx65ayv2hw3j5sebhr7gq22z": Infinity,
+                    "triton_mm-cttdu66wksa4lbbcy4wrjw455h6rn7qcjtssmn7fgl5icdv54ihj": 0.7700480222702026,
+                    "triton_mm-cnsny5kaxknjh34qkes344hek3hy5ur4xj5zcgkj7zoar6atu4q5": 0.21606400609016418,
+                    "triton_mm-c5gblhcb6iul4qh67oayt6ckc5dqsgwido2jmayjl3qisol6n3lq": 1.698815941810608,
+                    "triton_mm-c3xkdjokzmyju3hdbaocjhbaccqnsdwizf3t6koe4p7qnglcd4qn": Infinity,
+                    "triton_mm-crmizmg6a6p2pqc3keql3gzv4yisgihq5b3wohah4q7tdfmsjgfb": 0.7711039781570435,
+                    "triton_mm-cml3jupmbstok2gnbn7idr2m76diulhoyuhzab36v6jdupddo2li": 0.21900799870491028,
+                    "triton_mm-cwulglcp27iefeme67zrt3aja5raim6o5w2dnfvvtghfbnj3kt6s": 0.6850559711456299,
+                    "triton_mm-cnittb336b6nclwxzoiunqk52mx7alhspidkhyoq3e5jjknrpwgq": 1.8759679794311523,
+                    "triton_mm-c3p7kytgy36oq6g6wnsnvxjqzscjp6emfeskhfnqdh3ijbmue5mt": Infinity,
+                    "triton_mm-cl3imjtdtthebu6uibx2c6vm3bkzx2jmfzdwqgyijcygyd7wb7w5": Infinity
+                }
+            },
+            "[('cuda', 'torch.float32', 16050, 128, 0, 1, 0), ('cuda', 'torch.float32', 16050, 176, 176, 1, 0), ('cuda', 'torch.float32', 176, 128, 1, 176, 0)]": {
+                "highest": {
+                    "addmm-alpha=1-beta=1-c4xxd3iocu4yt6z4udrlqnumays7q6mfnfd3qprh4fxgsvyhqdkf": 0.0992640033364296,
+                    "triton_mm-cd5w2whpvrwhbdr7575c3ionmvpibchhmk5fcrsvh7wzqdrm3pcv": 0.2396160066127777,
+                    "triton_mm-ccep4w7xla3thq3orzukvw3u2735vqebmod4g6cppfxjsesddgj4": 0.32972800731658936,
+                    "triton_mm-cedffnjncufkuqpot7cpwmjyach45xvpwh2zmj4pljxkk6yhhmnx": 0.2549760043621063,
+                    "triton_mm-cgfvgrbmehyphhcmih2mytvsihwnzzemjowppkjnaeqjjazqlqd5": 0.2549760043621063,
+                    "triton_mm-cuiny47tmu5lyd2selrbo2d4ysjoeffrqjiinvy23yzq36hhyulw": Infinity,
+                    "triton_mm-cgjqxuh6mxacpfjg57ablcvynbzu7t3dwls2r2ou7qohz3mir63l": 0.12697599828243256,
+                    "triton_mm-cgvq2irl56fbsmd3r2agok4457x4sifl7vmzzx6pjmc7pz2k3akv": 0.1658879965543747,
+                    "triton_mm-chbwb52cuealz7siigi2gbta3vpfmhsfs7evgcrknymupcverddj": 0.25068798661231995,
+                    "triton_mm-ckrcizn6cecqna4toubwwidubtpg4d7wtxfjy6srhvb7gxzg4zvf": Infinity,
+                    "triton_mm-cll4din35ddfxg3bwywtaqzanfrp2n5pnkh7peqj7kayb4mw7rvh": 0.7761920094490051,
+                    "triton_mm-cbsannihtzoiplo6vdygzojc7a4q3o5gzrctxmmchn2uieqmhh4a": 0.21596799790859222,
+                    "triton_mm-cvtxldavvnw3oojiaezsqboiiop7oizboqzmm27cegkfkzgcdzjk": 1.6977920532226562,
+                    "triton_mm-cyvza3r7luwr5ohnfltbc2rs4rkussw5zqxo67ivezqhyudyydv6": Infinity,
+                    "triton_mm-cg7vr34qwg3xs4zuxanoml24zht7trgimh7wyvfftdxfkiyivyrq": 0.7772160172462463,
+                    "triton_mm-cktnbmginrcecobkyoeuykn4cpnvgtjzbzcepevxnappxhe3sscm": 0.21916800737380981,
+                    "triton_mm-cui7ostr7gw4vwiwqtdmf4d6lgjv6jplblqgjah67psdy3zodzng": 0.6911680102348328,
+                    "triton_mm-clhmuvqgarpbdbpngtqz4aqitfjl6fwrhc5ck4upuxphbgltozsh": 1.8769919872283936,
+                    "triton_mm-cd3kowscld3lxfmk5yxgp4ykxgt5cvp7mftocvhevkjdtplc7eio": Infinity,
+                    "triton_mm-cgngyjee2xic5ujlllzdimnzo3qjykdt5asj4v7ig6b6ohl76sbr": Infinity
+                }
+            },
+            "[('cuda', 'torch.float32', 16050, 128, 0, 1, 0), ('cuda', 'torch.float32', 16050, 172, 172, 1, 0), ('cuda', 'torch.float32', 172, 128, 1, 172, 0)]": {
+                "highest": {
+                    "addmm-alpha=1-beta=1-c4xxd3iocu4yt6z4udrlqnumays7q6mfnfd3qprh4fxgsvyhqdkf": 0.1013759970664978,
+                    "triton_mm-c5zgvhiloflyvzzeb6axqhlt6v6plyesihon4a2bdagr3yeuxvbg": 0.24780799448490143,
+                    "triton_mm-cmuhrdnfw3xcknpoppsofb52m3n2cajc3w6e3uzvyf6kwafk4uly": 0.33587199449539185,
+                    "triton_mm-c7tgdzvmb2rvpf252unp756lm6n3brhgcyqawlk3u7kd7smjwlji": 0.2590720057487488,
+                    "triton_mm-cxlzsgqz3vtepyb3p4znjz5yfzlwxetlfb5mkex4cpoqskoikd2e": 0.25600001215934753,
+                    "triton_mm-crq2sqjyvlpuflibu3d7yyp3wneznrwtrvyt5b5ibieyo4k27isa": Infinity,
+                    "triton_mm-cujvxpdyigrtun6nbngzit5rjrgv5oxwrljklhd4fkbtnsduyvmw": 0.130048006772995,
+                    "triton_mm-crjoctne5kskromeipmbi3ozb5cwz3k65jisjf6i466z4rwxjrz6": 0.16486400365829468,
+                    "triton_mm-c2i5dm5u4anpe7pthjs7vdf3ivuzdnjzojhamjxrynhrcah5f6el": 0.25702399015426636,
+                    "triton_mm-cdbtgghe44m25qt7m4oueoiy5v4vjcvotthpccrxnrfag4mnpspc": Infinity,
+                    "triton_mm-czqndd2llrq4uh546to2vfhdit4jkq5jakpfuldhjiisf2ek5f7z": 0.7761920094490051,
+                    "triton_mm-cjdyqjg6g24olklo6jlfhcdxnafq5f4chl36qw3bnw5yi2zl2tsi": 0.21606400609016418,
+                    "triton_mm-cla5v5rc2p65ovzj2lumqvpzsfboj6mykkubhb4hlirridw4kq6q": 1.6844799518585205,
+                    "triton_mm-clyn24yowql3zd4hyjpe47xxwxnw3dem5rafeoocxn6yqw5bunqu": Infinity,
+                    "triton_mm-c2lzk42rrnonpt6is237hjc66twchuqqnq5ke6tlpils5gwvwjbg": 0.7772160172462463,
+                    "triton_mm-c6jwraesuhakcjioh6sddxhddeuj4ymgxdnxgwjh5ddoyatcur5n": 0.2181120067834854,
+                    "triton_mm-cxz2kjlhtjtak73hyivdj7srq2lzzamnhxnzj7af5djsazrt7cc6": 0.6820160150527954,
+                    "triton_mm-cmqakrbg2f4mu5a3rekkfqd6prkjiuukqbijmmqj6oo2e2nyije2": 1.8810880184173584,
+                    "triton_mm-cdc757soqhx3frtyt56w3tbu6gzz2ezyyfmjdpmkjky7dkmajibb": Infinity,
+                    "triton_mm-cngceea56htw6auq6ajfsstoufdupy7c7m4zqxwkyrwih5xyx23b": Infinity
+                }
+            }
+        },
+        "bmm": {
+            "[('cuda', 'torch.float32', 2568, 1, 16, 16, 0, 1, 0), ('cuda', 'torch.float32', 2568, 16, 50, 800, 50, 1, 0)]": {
+                "highest": {
+                    "bmm-cd5psz4hpk4zkst35kaqy4cinkar3isguqbvs5d5ipyx2iqstqib": 0.02956799976527691,
+                    "triton_bmm-cap27peqg6ofuyhsvcvq6wkyml34y5ucw5yncuortqxvnjbb3lpe": 0.025696000084280968,
+                    "triton_bmm-cop22cz4e6zyb5m7nr2dkqyzlasie3iwp5smuvqoxvzkd6ont666": 0.02579200081527233,
+                    "triton_bmm-cjkddbsvmdg6dgpspcztrp5tn5vn3pa6yujlezd3ascqftps3ixk": 0.025599999353289604,
+                    "triton_bmm-cwjmffoh5i5lqgzwirrv6o74wedegcwmodxnxieuca76ziwn7sjw": 0.026399999856948853,
+                    "triton_bmm-cggy7vaoimjhw7quzr4g7675muxxtqgge5ijq2773owlp7scv266": 0.025599999353289604,
+                    "triton_bmm-cja35lohjelhyojj7qcfvh3zt4pok4zmutpl6u4dhqh4s5kg6mfc": 0.025599999353289604,
+                    "triton_bmm-c4ipmy44grcqbbm3dr2e32v4jak32plpqh6fdqvtxt3fvum4xprl": 0.025599999353289604
+                }
+            },
+            "[('cuda', 'torch.float32', 2568, 1, 50, 50, 0, 1, 0), ('cuda', 'torch.float32', 2568, 50, 16, 800, 16, 1, 0)]": {
+                "highest": {
+                    "bmm-cd5psz4hpk4zkst35kaqy4cinkar3isguqbvs5d5ipyx2iqstqib": 0.027648000046610832,
+                    "triton_bmm-cp544jtqsdcptrdnds6nqnnqngudyvp4kh4km2gx2fqk4mv7ks5s": 0.028672000393271446,
+                    "triton_bmm-cjwss3dtgfmnyrs4vbjs4kbz7wgpzbapkoovdtrjxsozn2spo64n": 0.026623999699950218,
+                    "triton_bmm-c5lnisgtxypuhakftyiid26rk37u6u4wix6gevaqzvyjso3zs5wx": 0.026623999699950218,
+                    "triton_bmm-cxbcu6g4obfqsm7eomnokqmdtbaan5qugwqqt2gnl3g7nscid6sy": 0.026623999699950218,
+                    "triton_bmm-cqkgucaelg7kmk2vpfwitjbmm5mw4lji3nadz2nhiyyudtkq7ylh": 0.02879999950528145,
+                    "triton_bmm-cd5i5kz2cnfyhueqymsc7mdzon5m3n4ly7iaeb2aaycl4kyuzymm": 0.027648000046610832,
+                    "triton_bmm-cyqauj7omfkzvuvhc2dfnuzqex3oixjpiehoo6lvqkcolrb5tnyz": 0.026623999699950218,
+                    "triton_bmm-c65s5tduanyyfgmyzqvs7zsppkim3ka4d7zixyvqkdhg5pkszor5": 0.027648000046610832,
+                    "triton_bmm-cr7doy2tdvsk6ywouac7dtd6xsiiopv6e5wdn5uxsjai7han3dck": 0.025599999353289604,
+                    "triton_bmm-c6ktof2vzshd3dghltvdekxswauh5i6etk6gvzlric3kkyhparvs": 0.026623999699950218
+                }
+            }
+        },
+        "mm_plus_mm": {
+            "[('cuda', 'torch.float32', 321, 128, 128, 1, 0), ('cuda', 'torch.float32', 128, 1, 1, 128, 0), ('cuda', 'torch.float32', 321, 128, 128, 1, 0), ('cuda', 'torch.float32', 128, 1, 1, 128, 0)]": {
+                "highest": {
+                    "_mm_plus_mm-ctr6dr2hnz63ntkdjp7uwfmkgghizfo5xojspd5rhp3fxu6zddfy": 0.010239999741315842,
+                    "triton_mm_plus_mm-cym2wvo2lxwh34tbjytnfe2bd2nzlan56me2ggmlsx6h6s7skhto": 0.634880006313324,
+                    "triton_mm_plus_mm-ceggokafovrx3spod2uto4evgd7phvxeettrs642qdgtjx7idx54": 0.23532800376415253,
+                    "triton_mm_plus_mm-crr7dm5vlc3jer2dpbr22icanadexllduhm6kn7zmi7rv3a6slkg": 0.053247999399900436,
+                    "triton_mm_plus_mm-cmtmxqb26gqdd3cvlf4kox2vb2oqmxhzt4tguwpt3ih7p2gbprw4": 0.02969600073993206,
+                    "triton_mm_plus_mm-cow4kafufaluw7fj5wjefsxjcxx2orihdf6ncygfyluhstxyukx3": 0.03276799991726875,
+                    "triton_mm_plus_mm-c7dcahmxfqmdsicap6k4rtdcrvsdfunfb63bvjclwxq2ohowafji": 1.4550399780273438,
+                    "triton_mm_plus_mm-czwfolgjz77mifueo4b6o3p4payd3wxseaiazbrwnuuepwf6ajvu": 0.6369280219078064,
+                    "triton_mm_plus_mm-cqngz627zyvter4vofw4eiiari53ayb2who7dvo4n32tixaipx5t": 0.1443839967250824,
+                    "triton_mm_plus_mm-czzys2x2ksm6p5vg73qqclvczfvk4hyvkqdcc7stcnyskdqsmxsf": 0.024639999493956566
+                }
+            }
+        }
+    }
+}

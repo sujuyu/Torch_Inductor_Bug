@@ -46,7 +46,6 @@ public:
 int main()
 {
     // init the operator
-    // TorchAotOp torchAotOp("../../fx_experiments/dynamicLib/user_model_trim_innerwei_cuda_fp32.so");
     TorchAotOp torchAotOp("./dynamicLib_7622_gpu/user_model_trim_innerwei_cuda_fp32.so");
 
     // 初始化线程池 init the thread_pool
