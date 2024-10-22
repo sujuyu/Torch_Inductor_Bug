@@ -3,13 +3,13 @@ The dynamic library obtained by torch._export.aot_compile will cause cuda illega
 The torch version I am using is 2.3.0. If you want to reproduce this problem on the latest torch 2.6.0, please change the dynamic library path in the threadpool_torchaot.cpp file to the file with the same name under dynamicLib_7622_gpu_torch260
 
 1. compile
-need to modify the TORCH_DIR; e.g. cmake -DTORCH_DIR=/home/admin/zy429782/miniforge3/envs/torch231_cuda121/lib/python3.8/site-packages/torch
+need to modify the TORCH_DIR; e.g. 
 ```bash
 mkdir build &&  cd  build && cmake -DTORCH_DIR=/your/custom/path/to/torch  ../ && make
 ```
 need to modify the TORCH_DIR; e.g. 
 ```bash
-cmake -DTORCH_DIR=/home/admin/zy429782/miniforge3/envs/torch231_cuda121/lib/python3.8/site-packages/torch
+cmake -DTORCH_DIR=/home/admin/zy429782/miniforge3/envs/torch231_cuda121/lib/python3.8/site-packages/torch ../
 ```
 
 2. run
